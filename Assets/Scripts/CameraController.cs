@@ -91,7 +91,6 @@ public class CameraController : MonoBehaviour
 			hoveringObject = obj;
 			if (hoveringObject != oldObject) 
 			{
-				hoveringObject.OnHover();
 			}
 
 		}
@@ -100,7 +99,6 @@ public class CameraController : MonoBehaviour
 		{
 			if (hoveringObject != null) 
 			{
-				hoveringObject.OnUnHover();
 			}
 			hoveringObject = null;
 		}

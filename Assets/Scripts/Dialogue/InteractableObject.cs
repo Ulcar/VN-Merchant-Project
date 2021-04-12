@@ -35,14 +35,4 @@ public class InteractableObject : MonoBehaviour
     }
 
 
-    public void OnHover() 
-    {
-        highlightMaterial.SetInt("enableHighlight", 1);
-    }
-
-    public void OnUnHover() 
-    {
-        highlightMaterial.SetInt("enableHighlight", 0);
-    }
-
     }

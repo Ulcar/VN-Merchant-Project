@@ -36,11 +36,25 @@ public class Inventory : MonoBehaviour
         else Engine.OnInitializationFinished += GetEngineServices;
     }
 
-    private void OnEnable()
+    private void AddSerializeTask() 
     {
-      
         stateManager.AddOnGameSerializeTask(SerializeState);
         stateManager.AddOnGameDeserializeTask(DeserializeState);
+    }
+
+    private void OnEnable()
+    {
+
+        if (Engine.Initialized)
+        {
+            stateManager.AddOnGameSerializeTask(SerializeState);
+            stateManager.AddOnGameDeserializeTask(DeserializeState);
+        }
+
+        else
+        {
+            Engine.OnInitializationFinished += AddSerializeTask;
+        }
     }
 
     private void OnDisable()
